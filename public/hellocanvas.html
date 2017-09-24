@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>hellocanvas</title>     
+</head>
+<body>
+    <label>weight</label>    
+    <input type = "text">
+    <br />
+    <br />
+    <label>height</label>
+    <input type = "text">
+    <br />
+    <br />
+    <label>color</label>
+    <input type="color">
+    <br />
+    <br />
+    <canvas id="myCanvas" width="300" height="200"
+    style="border:1px solid #000000;">    
+    </canvas>
+    <canvas id="myCanvas2" width="800" height="600"
+    style="border:1px solid #000000;">    
+    </canvas>
+    <script type="text/javascript">
+    var c=document.getElementById("myCanvas");
+    var cxt=c.getContext("2d");
+    cxt.fillStyle="#FF0000";
+    cxt.fillRect(0,0,150,75);
+    </script>
+    <script type="text/javascript">
+        var c=document.getElementById("myCanvas2");
+        var cxt=c.getContext("2d");
+        cxt.fillStyle="#000000";
+        cxt.fillRect(0,0,500,400);
+    </script>
+    <script type="text/javascript">        
+        var c=document.getElementById("myCanvas");
+        var cxt=c.getContext("2d");
+        cxt.moveTo(10,10);
+        cxt.lineTo(150,50);
+        cxt.lineTo(10,50);
+        cxt.strokeStyle="#0000FF"; 
+        cxt.stroke();      
+    </script>
+    <script type="text/javascript">        
+        var c=document.getElementById("myCanvas2");
+        var cxt=c.getContext("2d");
+        cxt.moveTo(10,10);
+        cxt.lineTo(550,50);
+        cxt.lineTo(10,500);
+        cxt.strokeStyle="#FF0000"; 
+        cxt.stroke();      
+    </script>
+    <script>     
+    function Ca() {
+    var canvas = draw();
+    canvas.clearRect(0, 0, myCanvas.width, myCanvas.height);
+    }
+    </script>
+</body>
+
+</html>
