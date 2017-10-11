@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head><title>running horse</title></head>
+    
+    
+    <body>
+        <table>
+            <table border="1" cellpadding = "10">
+                <tr>
+                    <td>行数</td>
+                    <td>列数</td>
+                    <td>起始X</td>
+                    <td>起始Y</td>
+                </tr>
+                <tr>                    
+                    <td><input type="number" id="m" name="m" value=""></td>
+                    <td><input type="number" id="n" name="n" value=""></td>
+                    <td><input type="text" id="x"></td>
+                    <td><input type="text" id="y"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="计算" onclick="jumpinghorse()"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="result" id="answer" ></td>
+                </tr>
+            </table>
+        </table>
+        <script>
+            var chess =new Array(); 
+            var m = parseInt(document.getElementById("m").value);
+            var n = parseInt(document.getElementById("n").value);
+            function Inchess(x,y)
+            {
+                var x = parseInt(document.getElementById("x").value);
+                var y = parseInt(document.getElementById("y").value);
+                boolean(x>-1&&x<m&&y>-1&&y<n);
+                continue;
+            }            
+            function judgedirections(flag)
+            {                             
+                var track=new Array();                
+                switch(flag)
+                {
+                    case 0:
+                    if (Inchess(x+1,y+2)!=track[x+1][y+2])
+                    {
+                        x++;
+                        y+=2;
+                        return true;
+                    }
+                    break;
+                    case 1:
+                    if (Inchess(x+2,y+1)!=track[x+2][y+1])
+                    {
+                        x+=2;
+                        y++;
+                        return true;
+                    }
+                    break;
+                    case 2:
+                    if (Inchess(x+2,y-1)!=track[x+2][y-1])
+                    {
+                        x+=2;
+                        y--;
+                        return true;
+                    }
+                    break;
+                    case 3:
+                    if (Inchess(x+1,y-2)!=track[x+1][y-2])
+                    {
+                        x++;
+                        y-=2;
+                        return true;
+                    }
+                    break;
+                    case 4:
+                    if (Inchess(x-1,y-2)!=track[x-1][y-2])
+                    {
+                        x--;
+                        y-=2;
+                        return true;
+                    }
+                    break;
+                    case 5:
+                    if (Inchess(x-2,y-1)!=track[x-2][y-1])
+                    {
+                        x-=2;
+                        y--;
+                        return true;
+                    }
+                    break;
+                    case 6:
+                    if (Inchess(x-1,y+2)!=track[x-1][y+2])
+                    {
+                        x--;
+                        y+=2;
+                        return true;
+                    }
+                    break;
+                    case 7:
+                    if (Inchess(x-2,y+1)!=track[x-2][y+1])
+                    {
+                        x-=2;
+                        y--;
+                        return true;
+                    }
+                    break;                    
+                }
+                return false;           
+            } 
+            function jumpinghorse()
+            {
+                                                              
+                var te=document.getElementById("answer");                  
+                for(var flag=0;flag<8;flag++)
+                  {
+                     if(judgedirections(flag))
+                     {
+                         
+                     }
+                  }
+                               
+            }                             
+        </script>        
+    </body>    
+</html>
