@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>最佳工作序列</head>
+    <body>
+            <table>
+                    <tr>
+                        <td>任务</td>
+                        <td>费时</td>
+                        <td>最后完成期限</td>
+                        <td>价值</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value=1></td>
+                        <td><input type="text" value=4></td>
+                        <td><input type="text" value=10></td>
+                        <td><input type="text" value=2></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value=2></td>
+                        <td><input type="text" value=3></td>
+                        <td><input type="text" value=8></td>
+                        <td><input type="text" value=3></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value=3></td>
+                        <td><input type="text" value=2></td>
+                        <td><input type="text" value=4></td>
+                        <td><input type="text" value=3></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" value=4></td>
+                        <td><input type="text" value=1></td>
+                        <td><input type="text" value=2></td>
+                        <td><input type="text" value=6></td>
+                    </tr>                    
+                    <tr>
+                        <td><input type="text" value="" id="result"></td>
+                    </tr>
+            </table>
+            <button onclick="findbestorder()">calculate</button>
+            <script>
+                var task=new array(1,2,3,4);
+                function swap(a,b)
+                {
+                    var temp=[0,0];
+                    temp[0]=b;
+                    temp[1]=a;
+                    return temp;
+                }
+                
+                function findbestorder()
+                {
+                   var costime=[4,3,2,1];                                                         
+                   var rs=document.getElementById("result");
+                   for(var i=0;i<4;i++)
+                   {
+                       if(costime[i]<costime[i+1])
+                       swap(costime[i],costime[i+1])
+                   }
+                   rs.value=[4,3,2,1];                    
+                }
+            </script>
+    </body>    
+</html>
