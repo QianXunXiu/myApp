@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>姓名编码</title>
+        <meta charset="utf-8">
+    </head>    
+</br>
+    <body onload="drawgrids()">        
+        <p>选择一个文件: <input type="file" id="Inputfile"></p> 
+        <p>选择画笔颜色：<input type="text" id="pencolor" value=""></p>
+        <p>选择画笔宽度：<input type="text" id="penwidth" value=""></p>
+        <p><input type="submit" id="confirm" value="提交" onclick="drawname()"></p>       
+        <canvas id="canvas1" width="1000px" height="1000px" style="border:1px soild" ></canvas>
+        <script>
+           function drawgrids()
+           {
+               var con=document.getElementById("canvas1");
+               if(con.getContext)
+               {
+                   var context=con.getContext("2d");
+                   context.beginPath();
+                   for(var i=0;i<=480;i+=30){
+                   context.moveTo(i,0);
+                   context.lineTo(i,480);}
+                   for(var j=0;j<=480;j+=30){
+                   context.moveTo(0,j);
+                   context.lineTo(480,j);}                   
+                   context.stroke();
+               }
+           }
+           function drawname()
+           {             
+             var file=document.getElementById("Inputfile").files[0];
+             var reader=new FileReader();             
+             reader.readAsText(file);
+             var text=new Array();
+             var text1=new Array();
+             var penwidth=document.getElementById("penwidth");
+             var pencolor=document.getElementById("pencolor");              
+             reader.onload=function(e)
+             {
+                 var fileText=e.target.result.split("\n");                 
+                 for(var a=0;a<67;a++)
+                 {
+                   text=fileText[a].split(","); 
+                   text1.push(text);                 
+                 }
+                 var can=document.getElementById("canvas1");
+             if(can.getContext)
+            {
+             var context=can.getContext("2d");
+             context.beginPath();                                        
+             context.lineWidth=penwidth.value; 
+             for(var i=1;i<3;i++)
+             {
+                 context.moveTo(parseInt(text1[i][0]),parseInt(text1[i][1]));
+                 context.lineTo(parseInt(text1[i+1][0]),parseInt(text1[i+1][1]))
+             }
+             for(var j=6;j<8;j++)
+             {
+                 context.moveTo(parseInt(text1[j][0]),parseInt(text1[j][1]));
+                 context.lineTo(parseInt(text1[j+1][0]),parseInt(text1[j+1][1]))
+             }
+             for(var k=11;k<15;k++)
+             {
+                 context.moveTo(parseInt(text1[k][0]),parseInt(text1[k][1]));
+                 context.lineTo(parseInt(text1[k+1][0]),parseInt(text1[k+1][1]))
+             }
+             for(var l=18;l<20;l++)
+             {
+                 context.moveTo(parseInt(text1[l][0]),parseInt(text1[l][1]));
+                 context.lineTo(parseInt(text1[l+1][0]),parseInt(text1[l+1][1]))
+             }
+             for(var m=23;m<25;m++)
+             {
+                 context.moveTo(parseInt(text1[m][0]),parseInt(text1[m][1]));
+                 context.lineTo(parseInt(text1[m+1][0]),parseInt(text1[m+1][1]))
+             }
+             for(var n=28;n<30;n++)
+             {
+                 context.moveTo(parseInt(text1[n][0]),parseInt(text1[n][1]));
+                 context.lineTo(parseInt(text1[n+1][0]),parseInt(text1[n+1][1]))
+             }
+             for(var p=33;p<36;p++)
+             {
+                 context.moveTo(parseInt(text1[p][0]),parseInt(text1[p][1]));
+                 context.lineTo(parseInt(text1[p+1][0]),parseInt(text1[p+1][1]))
+             }
+             for(var r=39;r<41;r++)
+             {
+                 context.moveTo(parseInt(text1[r][0]),parseInt(text1[r][1]));
+                 context.lineTo(parseInt(text1[r+1][0]),parseInt(text1[r+1][1]))
+             }
+             for(var q=44;q<48;q++)
+             {
+                 context.moveTo(parseInt(text1[q][0]),parseInt(text1[q][1]));
+                 context.lineTo(parseInt(text1[q+1][0]),parseInt(text1[q+1][1]))
+             }
+             for(var x=51;x<53;x++)
+             {
+                 context.moveTo(parseInt(text1[x][0]),parseInt(text1[x][1]));
+                 context.lineTo(parseInt(text1[x+1][0]),parseInt(text1[x+1][1]))
+             }
+             for(var y=56;y<58;y++)
+             {
+                 context.moveTo(parseInt(text1[y][0]),parseInt(text1[y][1]));
+                 context.lineTo(parseInt(text1[y+1][0]),parseInt(text1[y+1][1]))
+             }
+             for(var z=61;z<63;z++)
+             {
+                 context.moveTo(parseInt(text1[z][0]),parseInt(text1[z][1]));
+                 context.lineTo(parseInt(text1[z+1][0]),parseInt(text1[z+1][1]))
+             }
+             context.strokeStyle="blue";                         
+             context.stroke();                                     
+             }                      
+            } 
+           }
+           
+        </script>
+    </body>
+</html>
